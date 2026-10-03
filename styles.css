@@ -68,9 +68,16 @@
     #mobile-menu.open{display:block}
     @media (min-width:1024px){#mobile-menu,#mobile-menu.open{display:none !important}}
 
-:host {
-                display: block; width: 100%;
+/* Keep the demo isolated in its Shadow DOM and normalize inherited
+                 typography so page-wide styles cannot change node geometry. */
+              :host {
+                display: block; width: 100%; min-width: 0; max-width: 100%;
+                isolation: isolate; contain: style;
                 font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+                font-size: 16px; font-weight: 400; font-style: normal;
+                line-height: 1.5; letter-spacing: normal;
+                text-align: left; text-transform: none; white-space: normal;
+                overflow-wrap: normal; word-break: normal;
                 color: #e6edf3; --fb-purple: #a78bfa; --fb-bg: #0d1117;
                 --fb-panel: #161b22; --fb-border: #30363d; --fb-muted: #9ba7b4;
                 box-sizing: border-box;
