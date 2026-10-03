@@ -321,28 +321,6 @@
       customElements.define("superstack-flow-demo", SuperstackFlowDemo);
     })();
 
-(function () {
-      var grid = document.getElementById("intGrid");
-      if (!grid) return;
-      var tiles = grid.querySelectorAll(".int-tile");
-      var tabs = document.querySelectorAll(".int-tab");
-      if ("IntersectionObserver" in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) { if (e.isIntersecting) { grid.classList.add("is-in"); io.disconnect(); } });
-        }, { threshold: 0.15 });
-        io.observe(grid);
-      } else { grid.classList.add("is-in"); }
-      tabs.forEach(function (tab) {
-        tab.addEventListener("click", function () {
-          var f = tab.getAttribute("data-filter");
-          tabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
-          tiles.forEach(function (tile) {
-            tile.classList.toggle("is-dim", f !== "all" && tile.getAttribute("data-cat") !== f);
-          });
-        });
-      });
-    })();
-
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 // ===== MOBILE MENU TOGGLE =====
