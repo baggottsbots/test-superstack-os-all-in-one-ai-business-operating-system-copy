@@ -67,3 +67,79 @@
     #mobile-menu{display:none}
     #mobile-menu.open{display:block}
     @media (min-width:1024px){#mobile-menu,#mobile-menu.open{display:none !important}}
+
+:host {
+                display: block; width: 100%;
+                font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+                color: #e6edf3; --fb-purple: #a78bfa; --fb-bg: #0d1117;
+                --fb-panel: #161b22; --fb-border: #30363d; --fb-muted: #9ba7b4;
+                box-sizing: border-box;
+              }
+              *, *:before, *:after { box-sizing: border-box; }
+              .section { position: relative; isolation: isolate; overflow: hidden; padding: 64px 20px 56px; background: #0b0b14; }
+              .section:before {
+                content: ""; position: absolute; inset: 0; z-index: -1; opacity: .14;
+                background-image: linear-gradient(rgba(148,163,184,.19) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.19) 1px, transparent 1px);
+                background-size: 28px 28px;
+                mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+              }
+              .glow { position: absolute; z-index: -1; width: 280px; height: 280px; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: .15; background: #8b5cf6; top: 14%; right: 3%; }
+              .glow.two { top: auto; right: auto; bottom: 12%; left: 2%; background: #22d3ee; }
+              .inner { width: min(100%, 1120px); margin: 0 auto; }
+              .intro { text-align: center; margin: 0 auto 44px; max-width: 860px; }
+              .eyebrow { color: var(--fb-purple); font-weight: 700; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; margin: 0 0 15px; }
+              h2 { font-size: clamp(30px, 5vw, 50px); line-height: 1.12; letter-spacing: -.035em; margin: 0 0 18px; font-weight: 900; color: #f0f3f6; }
+              h2 span { background: linear-gradient(92deg, #a78bfa, #22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
+              .description { color: #9ba7b4; font-size: 17px; line-height: 1.65; margin: 0; }
+              .demo { position: relative; }
+              .frame { overflow: hidden; border: 1px solid var(--fb-border); border-radius: 16px; background: var(--fb-bg); box-shadow: 0 24px 70px rgba(0,0,0,.42); }
+              .titlebar { height: 48px; display: flex; align-items: center; padding: 0 16px; background: rgba(22,27,34,.74); border-bottom: 1px solid var(--fb-border); gap: 13px; color: #c9d1d9; font-size: 14px; font-weight: 600; }
+              .dots { display: flex; gap: 6px; }
+              .dot { width: 11px; height: 11px; border-radius: 50%; }
+              .red { background: #f87171; } .yellow { background: #facc15; } .green { background: #4ade80; }
+              .canvas { height: clamp(350px, 45vw, 550px); position: relative; overflow: hidden; background: #0d1117; touch-action: pan-y; user-select: none; }
+              .canvas:before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(rgba(148,163,184,.22) 1px, transparent 1px); background-size: 20px 20px; }
+              svg.edges { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+              .edge { fill: none; stroke-width: 2.2; stroke-dasharray: 6 7; animation: fb-flow 1.3s linear infinite; }
+              .edge.teal { stroke: #36d6b5; } .edge.true { stroke: #22c55e; } .edge.false { stroke: #ef4444; }
+              @keyframes fb-flow { to { stroke-dashoffset: -26; } }
+              .node { position: absolute; z-index: 1; outline: none; cursor: grab; touch-action: none; will-change: transform; transform-origin: top left; }
+              .node:active { cursor: grabbing; }
+              .node:focus-visible .card, .node:focus-visible .start-card { border-color: var(--fb-purple); box-shadow: 0 0 0 2px rgba(167,139,250,.25); }
+              .card { width: 100%; height: 100%; overflow: hidden; border: 1px solid rgba(148,163,184,.3); border-radius: 9px; background: rgba(22,27,34,.96); box-shadow: 0 8px 22px rgba(0,0,0,.34); color: #e6edf3; }
+              .node-head { height: 38px; display: flex; align-items: center; gap: 9px; padding: 0 10px; border-bottom: 1px solid rgba(255,255,255,.13); font-size: 13px; font-weight: 600; color: #f4f6f8; }
+              .node-head svg { width: 17px; height: 17px; flex: none; }
+              .bluehead { background: #2563eb; } .yellowhead { background: #b45309; } .redhead { background: #b91c1c; }
+              .node-body { padding: 11px 10px; font-size: 12px; color: #d3dae3; }
+              .message { border-radius: 5px; background: rgba(167,139,250,.12); padding: 8px 9px; line-height: 1.35; white-space: normal; }
+              .condition-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 4px; }
+              code { font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; border-radius: 4px; padding: 3px 5px; background: #39230f; color: #fdba74; }
+              code.value { background: #21262d; color: #c9d1d9; } .operator { font-size: 11px; color: #9ba7b4; }
+              .start-card { height: 100%; display: flex; align-items: center; gap: 9px; padding: 6px 12px; border: 1px solid rgba(148,163,184,.26); border-radius: 28px; background: #161b22; box-shadow: 0 6px 18px rgba(0,0,0,.3); font-size: 13px; font-weight: 600; color: #f0f3f6; }
+              .start-icon { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: var(--fb-purple); color: #fff; }
+              .start-icon svg { width: 14px; height: 14px; }
+              .handle { position: absolute; width: 11px; height: 11px; top: 50%; border: 2px solid #0d1117; border-radius: 50%; background: var(--fb-purple); transform: translateY(-50%); z-index: 2; }
+              .handle.left { left: -6px; } .handle.right { right: -6px; }
+              .handle.true { top: 40%; background: #22c55e; } .handle.false { top: 70%; background: #ef4444; }
+              .toolbar { position: absolute; right: 11px; top: 11px; z-index: 5; }
+              .float-badges { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+              .float-tag { position: absolute; top: 58px; display: flex; align-items: center; gap: 7px; border: 1px solid #30363d; border-radius: 9px; padding: 8px 10px; background: rgba(22,27,34,.96); box-shadow: 0 5px 16px rgba(0,0,0,.28); color: #e6edf3; font-size: 12px; font-weight: 600; white-space: nowrap; }
+              .float-tag.left { left: 11px; } .float-tag.right { right: 11px; top: auto; bottom: 12px; }
+              .float-tag svg { width: 15px; height: 15px; color: var(--fb-purple); flex: none; }
+              button { font: 600 12px ui-sans-serif, system-ui, sans-serif; display: flex; align-items: center; gap: 7px; border: 1px solid #30363d; border-radius: 7px; padding: 7px 10px; background: rgba(22,27,34,.94); color: #dce2e8; box-shadow: 0 3px 12px rgba(0,0,0,.24); cursor: pointer; }
+              button:hover { background: #21262d; }
+              button:focus-visible { outline: 2px solid var(--fb-purple); outline-offset: 2px; }
+              button svg { width: 14px; height: 14px; color: var(--fb-purple); }
+              .badges { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin: 34px auto 0; }
+              .badge { display: flex; align-items: center; gap: 8px; padding: 9px 14px; border: 1px solid #30363d; border-radius: 999px; background: #161b22; color: #c9d1d9; font-size: 13px; white-space: nowrap; }
+              .badge-icon { width: 20px; height: 20px; border-radius: 5px; display: grid; place-items: center; color: white; background: #2878d0; }
+              .badge-icon svg { width: 12px; height: 12px; } .badge-icon.spark { background: #6d4bd1; }
+              @media (max-width: 560px) {
+                .section { padding: 50px 14px 44px; }
+                .intro { margin-bottom: 34px; }
+                .description { font-size: 15px; }
+                .titlebar { height: 44px; }
+                .canvas { height: 350px; }
+                .badge { font-size: 12px; padding: 8px 11px; }
+              }
+              @media (prefers-reduced-motion: reduce) { .edge { animation: none; stroke-dasharray: 4 5; } }
