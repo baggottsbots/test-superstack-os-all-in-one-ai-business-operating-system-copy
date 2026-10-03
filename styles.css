@@ -32,7 +32,9 @@
 
     /* ===== TOOLS MARQUEE ===== */
     /* CSS-only infinite horizontal scroll of integrated tool names */
+    /* Spacing uses margin (not gap) so the -50% loop point lands exactly on the duplicate list */
     .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+    .marquee-track > * { margin-right: 0.75rem; flex-shrink: 0; }
     .marquee:hover .marquee-track { animation-play-state: paused; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
