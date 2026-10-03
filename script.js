@@ -13,6 +13,314 @@
       }
     }
 
+(function () {
+      if (customElements.get("superstack-flow-demo")) return;
+
+      class SuperstackFlowDemo extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: "open" });
+
+          this.nodes = [
+            { id: "start", type: "start", x: 30, y: 120, w: 120, h: 48 },
+            { id: "condition", type: "condition", x: 160, y: 90, w: 220, h: 96 },
+            { id: "support", type: "message", x: 420, y: 20, w: 220, h: 116 },
+            { id: "ai", type: "action", x: 420, y: 150, w: 220, h: 116 },
+            { id: "reply", type: "message", x: 680, y: 150, w: 220, h: 116 }
+          ];
+
+          this.initialNodes = this.nodes.map(node => ({ ...node }));
+          this.nodeElements = new Map();
+          this.onPointerMove = this.onPointerMove.bind(this);
+          this.onPointerUp = this.onPointerUp.bind(this);
+          this.onKeyDown = this.onKeyDown.bind(this);
+
+          this.shadowRoot.innerHTML = `
+            
+
+            <section class="section">
+              <i class="glow"></i>
+              <i class="glow two"></i>
+              <div class="inner">
+                <header class="intro">
+                  <p class="eyebrow">Next-Gen Visual Flow Builder</p>
+                  <h2>Build Conversations <span>Visually</span></h2>
+                  <p class="description">
+                    Drag and drop nodes to create powerful AI agent flows.
+                    No coding required. Try it yourself below!
+                  </p>
+                </header>
+                <div class="demo">
+                  <div class="frame">
+                    <div class="titlebar">
+                      <span class="dots" aria-hidden="true">
+                        <i class="dot red"></i><i class="dot yellow"></i><i class="dot green"></i>
+                      </span>
+                      <span>Flow Builder</span>
+                    </div>
+                    <div class="canvas" role="group" aria-label="Interactive sample conversation flow">
+                      <svg class="edges" aria-hidden="true"></svg>
+                      <div class="toolbar">
+                        <button type="button" class="reset" aria-label="Reset">Reset</button>
+                      </div>
+                      <div class="nodes"></div>
+                    </div>
+                  </div>
+                  <div class="float-badges" aria-hidden="true">
+                    <div class="float-tag left">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 3 14 9-7 1-3 7-4-17z"/></svg>
+                      Drag &amp; Drop
+                    </div>
+                    <div class="float-tag right">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/></svg>
+                      AI Powered
+                    </div>
+                  </div>
+                </div>
+                <div class="badges">
+                  <div class="badge">
+                    <span class="badge-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+                    </span>
+                    Send Messages
+                  </div>
+                  <div class="badge">
+                    <span class="badge-icon spark">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-2-5.8L4 11l6-2.2L12 3zM19 14l1.2 3.1L23 18l-2.8 1-1.2 3-1-3-3-1 3-.9L19 14z"/></svg>
+                    </span>
+                    AI Powered
+                  </div>
+                </div>
+              </div>
+            </section>
+          `;
+
+          this.canvas = this.shadowRoot.querySelector(".canvas");
+          this.nodesEl = this.shadowRoot.querySelector(".nodes");
+          this.svg = this.shadowRoot.querySelector(".edges");
+
+          this.shadowRoot.querySelector(".reset").addEventListener("click", () => {
+            this.cancelDrag();
+            this.nodes = this.initialNodes.map(node => ({ ...node }));
+            this.render();
+          });
+
+          this.observer = new ResizeObserver(() => this.fit());
+        }
+
+        connectedCallback() {
+          this.observer.observe(this.canvas);
+          this.ownerDocument.addEventListener("pointermove", this.onPointerMove);
+          this.ownerDocument.addEventListener("pointerup", this.onPointerUp);
+          this.ownerDocument.addEventListener("pointercancel", this.onPointerUp);
+          this.render();
+        }
+
+        disconnectedCallback() {
+          this.cancelDrag();
+          this.observer.disconnect();
+          this.ownerDocument.removeEventListener("pointermove", this.onPointerMove);
+          this.ownerDocument.removeEventListener("pointerup", this.onPointerUp);
+          this.ownerDocument.removeEventListener("pointercancel", this.onPointerUp);
+        }
+
+        fit() {
+          const width = this.canvas.clientWidth;
+          const height = this.canvas.clientHeight;
+          if (!width || !height) return;
+
+          const minX = 10, minY = 5, maxX = 920, maxY = 280;
+          this.scale = Math.min(
+            (width - 28) / (maxX - minX),
+            (height - 28) / (maxY - minY)
+          );
+          this.offsetX = (width - (maxX - minX) * this.scale) / 2 - minX * this.scale;
+          this.offsetY = (height - (maxY - minY) * this.scale) / 2 - minY * this.scale;
+          this.render();
+        }
+
+        nodeMarkup(node) {
+          const handle = (side, cls = "") => `<i class="handle ${side} ${cls}"></i>`;
+
+          if (node.type === "start") {
+            return `
+              ${handle("right")}
+              <div class="start-card">
+                <span class="start-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 4 13 8-13 8V4z"/></svg>
+                </span>
+                Start
+              </div>
+            `;
+          }
+
+          const icon = node.type === "condition"
+            ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v12m0 0a3 3 0 1 0 3 3m-3-3a3 3 0 1 1-3 3m3-3h8a4 4 0 0 0 4-4V5m0 0-3 3m3-3 3 3"/></svg>`
+            : node.type === "action"
+              ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m13 2-3 9h7L9 22l2-9H4l9-11z"/></svg>`
+              : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>`;
+
+          if (node.type === "condition") {
+            return `
+              ${handle("left")}
+              <div class="card">
+                <div class="node-head yellowhead">${icon}<span>Condition</span></div>
+                <div class="node-body">
+                  <div class="condition-row">
+                    <code>intent</code><span class="operator">=</span><code class="value">support</code>
+                  </div>
+                </div>
+              </div>
+              ${handle("right", "true")}
+              ${handle("right", "false")}
+            `;
+          }
+
+          const label = node.type === "action" ? "AI Generate" : "Send Message";
+          const text = node.id === "support"
+            ? "Connecting you to support..."
+            : node.type === "action" ? "Generate response with GPT" : "{{ai_reply}}";
+
+          return `
+            ${handle("left")}
+            <div class="card">
+              <div class="node-head ${node.type === "action" ? "redhead" : "bluehead"}">
+                ${icon}<span>${label}</span>
+              </div>
+              <div class="node-body"><div class="message">${text}</div></div>
+            </div>
+            ${node.id === "reply" ? "" : handle("right")}
+          `;
+        }
+
+        render() {
+          if (!this.scale) {
+            const w = this.canvas.clientWidth;
+            const h = this.canvas.clientHeight;
+            if (!w || !h) return;
+            this.scale = Math.min((w - 28) / 910, (h - 28) / 275);
+            this.offsetX = (w - 910 * this.scale) / 2 - 10 * this.scale;
+            this.offsetY = (h - 275 * this.scale) / 2 - 5 * this.scale;
+          }
+
+          this.nodes.forEach(node => {
+            let el = this.nodeElements.get(node.id);
+            if (!el) {
+              el = this.ownerDocument.createElement("div");
+              el.className = "node";
+              el.dataset.id = node.id;
+              el.dataset.nodeId = ({ start: "1", condition: "2", support: "3", ai: "4", reply: "5" })[node.id];
+              el.tabIndex = 0;
+              el.setAttribute("role", "group");
+              el.setAttribute(
+                "aria-label",
+                node.id === "condition"
+                  ? "Condition: intent equals support. Use arrow keys to move."
+                  : `${node.type === "start" ? "Start" : node.type === "action" ? "AI Generate" : "Send Message"}. Use arrow keys to move.`
+              );
+              el.style.width = `${node.w}px`;
+              el.style.height = `${node.h}px`;
+              el.innerHTML = this.nodeMarkup(node);
+              el.addEventListener("pointerdown", event => this.startDrag(event, node.id, el));
+              el.addEventListener("keydown", this.onKeyDown);
+              this.nodeElements.set(node.id, el);
+              this.nodesEl.appendChild(el);
+            }
+            el.style.transform = `translate(${this.offsetX + node.x * this.scale}px,${this.offsetY + node.y * this.scale}px) scale(${this.scale})`;
+          });
+          this.drawEdges();
+        }
+
+        drawEdges() {
+          const pos = id => this.nodes.find(node => node.id === id);
+          const start = pos("start");
+          const condition = pos("condition");
+          const support = pos("support");
+          const ai = pos("ai");
+          const reply = pos("reply");
+          const point = (node, x, y) => [
+            this.offsetX + (node.x + x) * this.scale,
+            this.offsetY + (node.y + y) * this.scale
+          ];
+          const curve = (a, b, cls) => {
+            const [x1, y1] = a;
+            const [x2, y2] = b;
+            const dx = Math.max(22, (x2 - x1) * .45);
+            return `<path class="edge ${cls}" d="M${x1} ${y1} C${x1 + dx} ${y1},${x2 - dx} ${y2},${x2} ${y2}"/>`;
+          };
+          this.svg.innerHTML = [
+            curve(point(start, start.w, start.h / 2), point(condition, 0, condition.h / 2), "teal"),
+            curve(point(condition, condition.w, condition.h * .4), point(support, 0, support.h / 2), "true"),
+            curve(point(condition, condition.w, condition.h * .7), point(ai, 0, ai.h / 2), "false"),
+            curve(point(ai, ai.w, ai.h / 2), point(reply, 0, reply.h / 2), "teal")
+          ].join("");
+        }
+
+        constrainNode(node, x, y) {
+          const freeMove = node.id === "ai";
+          const minX = freeMove ? (6 - this.offsetX) / this.scale : 10;
+          const minY = freeMove ? (6 - this.offsetY) / this.scale : 5;
+          const maxX = freeMove ? (this.canvas.clientWidth - 6 - this.offsetX) / this.scale - node.w : 920 - node.w;
+          const maxY = freeMove ? (this.canvas.clientHeight - 6 - this.offsetY) / this.scale - node.h : 280 - node.h;
+          node.x = Math.max(minX, Math.min(maxX, x));
+          node.y = Math.max(minY, Math.min(maxY, y));
+        }
+
+        startDrag(event, id, element) {
+          if (event.button !== 0) return;
+          event.preventDefault();
+          const node = this.nodes.find(item => item.id === id);
+          this.drag = {
+            id, pointer: event.pointerId, x: event.clientX, y: event.clientY,
+            nodeX: node.x, nodeY: node.y
+          };
+          element.focus({ preventScroll: true });
+          element.setPointerCapture?.(event.pointerId);
+        }
+
+        onPointerMove(event) {
+          if (!this.drag || event.pointerId !== this.drag.pointer) return;
+          const node = this.nodes.find(item => item.id === this.drag.id);
+          this.constrainNode(
+            node,
+            this.drag.nodeX + (event.clientX - this.drag.x) / this.scale,
+            this.drag.nodeY + (event.clientY - this.drag.y) / this.scale
+          );
+          this.render();
+        }
+
+        cancelDrag() {
+          if (!this.drag) return;
+          const element = this.nodeElements.get(this.drag.id);
+          try {
+            if (element?.hasPointerCapture(this.drag.pointer)) {
+              element.releasePointerCapture(this.drag.pointer);
+            }
+          } catch (_) {}
+          this.drag = null;
+        }
+
+        onPointerUp(event) {
+          if (this.drag && event.pointerId === this.drag.pointer) this.cancelDrag();
+        }
+
+        onKeyDown(event) {
+          const delta = {
+            ArrowLeft: [-8, 0], ArrowRight: [8, 0],
+            ArrowUp: [0, -8], ArrowDown: [0, 8]
+          }[event.key];
+          if (!delta) return;
+          event.preventDefault();
+          const node = this.nodes.find(item => item.id === event.currentTarget.dataset.id);
+          this.constrainNode(node, node.x + delta[0], node.y + delta[1]);
+          this.render();
+          this.nodeElements.get(node.id)?.focus({ preventScroll: true });
+        }
+      }
+
+      customElements.define("superstack-flow-demo", SuperstackFlowDemo);
+    })();
+
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 // ===== MOBILE MENU TOGGLE =====
