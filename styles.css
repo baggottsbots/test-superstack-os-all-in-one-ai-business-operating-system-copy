@@ -5,36 +5,36 @@
 
     /* ===== GRID BACKGROUND TEXTURE ===== */
     /* Subtle dot grid used behind hero and CTA sections */
-    .grid-bg {
+    :where(.superstack-site) .grid-bg {
       background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
       background-size: 28px 28px;
     }
 
     /* ===== GRADIENT TEXT ===== */
     /* Violet → cyan gradient for highlighted words in headlines */
-    .text-gradient {
+    :where(.superstack-site) .text-gradient {
       background: linear-gradient(92deg, #a78bfa 0%, #22d3ee 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
 
     /* ===== GLASS CARD ===== */
     /* Semi-transparent card with soft border used across features/pricing/testimonials */
-    .glass {
+    :where(.superstack-site) .glass {
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       border: 1px solid rgba(255,255,255,0.08);
       backdrop-filter: blur(10px);
     }
-    .glass:hover { border-color: rgba(167,139,250,0.35); }
+    :where(.superstack-site) .glass:hover { border-color: rgba(167,139,250,0.35); }
 
     /* ===== GLOW ORBS ===== */
     /* Blurred color blobs for atmosphere behind hero */
-    .orb { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: 0.45; pointer-events: none; }
+    :where(.superstack-site) .orb { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: 0.45; pointer-events: none; }
 
     /* ===== TOOLS MARQUEE ===== */
     /* CSS-only infinite horizontal scroll of integrated tool names */
-    .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
-    .marquee:hover .marquee-track { animation-play-state: paused; }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    :where(.superstack-site) .marquee-track { display: flex; width: max-content; animation: superstack-marquee 38s linear infinite; }
+    :where(.superstack-site) .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes superstack-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* ===== STACK SCENE (PINNED GSAP MOMENT) ===== */
     /* Scattered SaaS cards that converge into the SuperStack OS core while scrolling */
@@ -47,22 +47,25 @@
 
     /* ===== FAQ ACCORDION ===== */
     /* Rotate chevron when <details> is open; hide default marker */
-    details summary::-webkit-details-marker { display: none; }
-    details[open] .faq-chevron { transform: rotate(180deg); }
-    .faq-chevron { transition: transform .3s ease; }
+    :where(.superstack-site .faq-section) details summary::-webkit-details-marker { display: none; }
+    :where(.superstack-site .faq-section) details[open] .faq-chevron { transform: rotate(180deg); }
+    :where(.superstack-site .faq-section) .faq-chevron { transition: transform .3s ease; }
 
     /* ===== DASHBOARD MOCK BARS ===== */
     /* Simple animated bar chart in hero dashboard preview */
-    .bar { transform-origin: bottom; animation: barpulse 3.2s ease-in-out infinite; }
-    .bar:nth-child(2) { animation-delay: .3s } .bar:nth-child(3) { animation-delay: .6s }
-    .bar:nth-child(4) { animation-delay: .9s } .bar:nth-child(5) { animation-delay: 1.2s }
-    .bar:nth-child(6) { animation-delay: 1.5s } .bar:nth-child(7) { animation-delay: 1.8s }
-    @keyframes barpulse { 0%,100% { transform: scaleY(1) } 50% { transform: scaleY(.72) } }
+    :where(.superstack-site .hero-visual) .bar { transform-origin: bottom; animation: superstack-barpulse 3.2s ease-in-out infinite; }
+    :where(.superstack-site .hero-visual) .bar:nth-child(2) { animation-delay: .3s }
+    :where(.superstack-site .hero-visual) .bar:nth-child(3) { animation-delay: .6s }
+    :where(.superstack-site .hero-visual) .bar:nth-child(4) { animation-delay: .9s }
+    :where(.superstack-site .hero-visual) .bar:nth-child(5) { animation-delay: 1.2s }
+    :where(.superstack-site .hero-visual) .bar:nth-child(6) { animation-delay: 1.5s }
+    :where(.superstack-site .hero-visual) .bar:nth-child(7) { animation-delay: 1.8s }
+    @keyframes superstack-barpulse { 0%,100% { transform: scaleY(1) } 50% { transform: scaleY(.72) } }
 
     /* ===== LIVE DOT ===== */
     /* Pulsing green indicator for "agents online" */
-    .live-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
-    @keyframes pulse-dot { 0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,.6) } 50% { box-shadow: 0 0 0 6px rgba(34,197,94,0) } }
+    :where(.superstack-site) .live-dot { animation: superstack-pulse-dot 1.6s ease-in-out infinite; }
+    @keyframes superstack-pulse-dot { 0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,.6) } 50% { box-shadow: 0 0 0 6px rgba(34,197,94,0) } }
 
     #mobile-menu{display:none}
     #mobile-menu.open{display:block}
