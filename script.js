@@ -5,7 +5,7 @@
         extend: {
           colors: {
             ink: { DEFAULT: '#07070d', 900: '#0b0b14', 800: '#111120', 700: '#181829', 600: '#22223a' },
-            brand: { 200: '#ddd6fe', 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed' },
+            brand: { 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed' },
             volt: { 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4' }
           },
           fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'] }
@@ -321,9 +321,29 @@
       customElements.define("superstack-flow-demo", SuperstackFlowDemo);
     })();
 
+(function () {
+      var grid = document.getElementById("intGrid");
+      if (!grid) return;
+      var tiles = grid.querySelectorAll(".int-tile");
+      var tabs = document.querySelectorAll(".int-tab");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { grid.classList.add("is-in"); io.disconnect(); } });
+        }, { threshold: 0.15 });
+        io.observe(grid);
+      } else { grid.classList.add("is-in"); }
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          var f = tab.getAttribute("data-filter");
+          tabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+          tiles.forEach(function (tile) {
+            tile.classList.toggle("is-dim", f !== "all" && tile.getAttribute("data-cat") !== f);
+          });
+        });
+      });
+    })();
+
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
-    // Prevent mobile address-bar show/hide from re-triggering refreshes (keeps the pinned scene steady)
-    ScrollTrigger.config({ ignoreMobileResize: true });
 
 // ===== MOBILE MENU TOGGLE =====
     // Function: toggleMobileMenu()
@@ -399,20 +419,11 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
       gsap.set('.stack-core', { scale: 0.7, autoAlpha: 0.35 });
       gsap.set('.stack-headline-b', { autoAlpha: 0, y: 40 });
 
-      // Distance from each card's center to the scene center, measured with offset* values
-      // (unaffected by transforms) so it stays correct on every refresh/resize.
-      function toCenterX(i, el) { return scene.clientWidth / 2 - (el.offsetLeft + el.offsetWidth / 2); }
-      function toCenterY(i, el) { return scene.clientHeight / 2 - (el.offsetTop + el.offsetHeight / 2); }
-
       gsap.timeline({
-        scrollTrigger: {
-          trigger: scene, start: 'top top', end: '+=220%', pin: true, scrub: 1, anticipatePin: 1,
-          invalidateOnRefresh: true,
-          refreshPriority: 1 // pin is created after the page-wide reveals; refresh it first so triggers below get correct positions
-        }
+        scrollTrigger: { trigger: scene, start: 'top top', end: '+=220%', pin: true, scrub: 1, anticipatePin: 1 }
       })
         .to(cards, {
-          x: toCenterX, y: toCenterY,
+          left: '50%', top: '50%', right: 'auto', xPercent: -50, yPercent: -50,
           rotation: 0, scale: 0.45, duration: 1.4, ease: 'power2.inOut', stagger: 0.06
         }, 0)
         .to('.stack-headline-a', { autoAlpha: 0, y: -40, duration: 0.5 }, 0.7)
@@ -520,10 +531,5 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
     // Function: refreshTriggers()
     // Purpose: Recalculate pinned/scrubbed positions once web fonts have loaded
     (function refreshTriggers() {
-      // Ensure triggers are ordered by refreshPriority / page position before measuring
-      ScrollTrigger.sort();
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
-      }
       window.addEventListener('load', function () { ScrollTrigger.refresh(); });
     })();
