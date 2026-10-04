@@ -8,6 +8,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <meta name="creator" content="Ryan Baggott">
+  <meta name="author" content="Ryan Baggott">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SuperStack OS",
+    "creator": {
+      "@type": "Person",
+      "name": "Ryan Baggott"
+    }
+  }
+  </script>
+  <!-- You found it. Ryan Baggott 👑 is watching. -->
   
   
 
@@ -550,140 +564,9 @@
     </section>
 
     <!-- ============================================================================ -->
-    <!-- STACK REPLACEMENT SCENE: Pinned, scroll-scrubbed GSAP marquee moment         -->
-    <!-- Behaviour: Scattered SaaS cards converge into the SuperStack OS core          -->
-    <!-- Edit: Change card labels below; positions are set with Tailwind left/top      -->
-    <!-- ============================================================================ -->
-    <section data-section="stack-replacement" class="stack-scene relative h-screen overflow-hidden bg-ink-900">
-      <div class="orb bg-brand-600 h-[500px] w-[500px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
-
-      <!-- Top headline (fades out) -->
-      <div class="stack-headline-a absolute top-24 sm:top-28 inset-x-0 px-4 sm:px-6 text-center">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">The fragmented stack problem</p>
-        <h2 class="mt-3 text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">Twelve tabs. Twelve invoices.<br class="hidden sm:block"> Zero connection.</h2>
-      </div>
-
-      <!-- Scattered tool cards -->
-      <div class="stack-card left-[6%] top-[24%] sm:left-[10%] sm:top-[22%]" data-rot="-8"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">CRM</div></div>
-      <div class="stack-card right-[8%] top-[26%] sm:right-[12%] sm:top-[24%]" data-rot="7"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Email Marketing</div></div>
-      <div class="stack-card left-[4%] top-[46%] sm:left-[6%] sm:top-[48%]" data-rot="5"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Automation</div></div>
-      <div class="stack-card right-[5%] top-[48%] sm:right-[7%] sm:top-[50%]" data-rot="-6"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">E-commerce</div></div>
-      <div class="stack-card left-[12%] top-[68%] sm:left-[16%] sm:top-[70%]" data-rot="9"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Voice AI</div></div>
-      <div class="stack-card right-[14%] top-[70%] sm:right-[18%] sm:top-[72%]" data-rot="-4"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Loyalty</div></div>
-      <div class="stack-card left-[30%] top-[36%] sm:left-[26%] sm:top-[36%]" data-rot="3"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Content</div></div>
-      <div class="stack-card right-[30%] top-[38%] sm:right-[26%] sm:top-[36%]" data-rot="-3"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Payments</div></div>
-      <div class="stack-card left-[34%] top-[62%] sm:left-[32%] sm:top-[64%]" data-rot="-7"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Scheduling</div></div>
-      <div class="stack-card right-[32%] top-[60%] sm:right-[30%] sm:top-[62%]" data-rot="6"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">AI Agents</div></div>
-
-      <!-- Core -->
-      <div class="absolute inset-0 flex items-center justify-center px-4">
-        <div class="stack-core rounded-3xl bg-ink-800 border border-brand-500/40 px-8 py-8 sm:px-14 sm:py-12 text-center">
-          <img src="https://paymegpt.com/objects/quick-uploads/2/d13163889f1ec1fb.png" alt="SuperStack OS" class="block mx-auto h-12 w-12">
-          <p class="mt-4 text-3xl sm:text-5xl font-black text-white tracking-tight">One OS.</p>
-          <p class="mt-2 text-sm sm:text-base text-gray-400">Everything connected. One login. One bill.</p>
-        </div>
-      </div>
-
-      <!-- Bottom caption (fades in) -->
-      <div class="stack-headline-b absolute bottom-16 sm:bottom-20 inset-x-0 px-4 sm:px-6 text-center">
-        <p class="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">SuperStack OS replaces your fragmented SaaS stack with a single scalable platform your AI agents can actually operate.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================================ -->
-    <!-- FEATURES SECTION: Bento grid of platform modules                             -->
-    <!-- Features: GSAP staggered reveal, hover border glow                            -->
-    <!-- Edit: Each card is a self-contained <article>                                 -->
-    <!-- ============================================================================ -->
-    <section id="features" data-section="features" class="features-section py-20 sm:py-28">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-          <p class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">The platform</p>
-          <h2 class="reveal mt-3 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">Every tool your business needs. <span class="text-gradient">Already talking to each other.</span></h2>
-          <p class="reveal mt-4 text-gray-400 text-base sm:text-lg">No Zapier duct tape. No CSV exports. Every module shares the same contacts, events and data model — so an AI agent can read a call transcript, update the deal, send the invoice and issue a loyalty pass in one motion.</p>
-        </div>
-
-        <div class="features-grid mt-14 grid grid-cols-1 md:grid-cols-6 gap-5">
-          <!-- AI Agents (large) -->
-          <article class="reveal glass rounded-2xl p-7 md:col-span-4 transition">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
-                  <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-                </span>
-                <h3 class="mt-4 text-xl font-bold text-white">AI Agents with real tools</h3>
-                <p class="mt-2 text-gray-400 leading-relaxed">Build agents that don't just chat — they act. Give them access to your CRM, calendar, Stripe, voice and content tools with custom functions and guardrails. Deploy on web, SMS, voice or inside ChatGPT, Claude and Grok through MCP.</p>
-              </div>
-            </div>
-            <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-              <div class="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-gray-300">Custom functions</div>
-              <div class="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-gray-300">Memory &amp; context</div>
-              <div class="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-gray-300">Multi-channel</div>
-              <div class="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-gray-300">Human handoff</div>
-            </div>
-          </article>
-
-          <!-- Automation -->
-          <article class="reveal glass rounded-2xl p-7 md:col-span-2 transition">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-volt-500/20 text-volt-300">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 3L4 14h7l-1 7 9-11h-7l1-7z"/></svg>
-            </span>
-            <h3 class="mt-4 text-xl font-bold text-white">No-code automation</h3>
-            <p class="mt-2 text-gray-400 leading-relaxed">Drag-and-drop customer journeys with triggers, branches, delays and AI decision steps. Automate onboarding, follow-ups, win-backs and renewals.</p>
-          </article>
-
-          <!-- CRM -->
-          <article class="reveal glass rounded-2xl p-7 md:col-span-2 transition">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"/></svg>
-            </span>
-            <h3 class="mt-4 text-xl font-bold text-white">CRM &amp; pipelines</h3>
-            <p class="mt-2 text-gray-400 leading-relaxed">Unified contacts, deals, tags, notes and timelines. Every email, call, purchase and agent action lands on one record.</p>
-          </article>
-
-          <!-- Marketing & Sales -->
-          <article class="reveal glass rounded-2xl p-7 md:col-span-2 transition">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-volt-500/20 text-volt-300">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11l18-6-6 18-2.5-7.5L3 11z"/></svg>
-            </span>
-            <h3 class="mt-4 text-xl font-bold text-white">Marketing &amp; sales</h3>
-            <p class="mt-2 text-gray-400 leading-relaxed">Email, SMS and social campaigns, landing pages, forms, booking, quotes and proposals — built in and tracked end to end.</p>
-          </article>
-
-          <!-- Commerce -->
-          <article class="reveal glass rounded-2xl p-7 md:col-span-2 transition">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 6l1.5 12a2 2 0 002 2h11a2 2 0 002-2L21 6M8 10v2a4 4 0 008 0v-2"/></svg>
-            </span>
-            <h3 class="mt-4 text-xl font-bold text-white">Stripe commerce &amp; wallet passes</h3>
-            <p class="mt-2 text-gray-400 leading-relaxed">Sell products, subscriptions and services with Stripe. Issue Apple and Google Wallet passes for loyalty, tickets and memberships.</p>
-          </article>
-
-          <!-- Voice -->
-          <article class="reveal glass rounded-2xl p-7 md:col-span-3 transition">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-volt-500/20 text-volt-300">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a3 3 0 013 3v6a3 3 0 11-6 0V6a3 3 0 013-3zM5 11a7 7 0 0014 0M12 18v3"/></svg>
-            </span>
-            <h3 class="mt-4 text-xl font-bold text-white">Voice AI that answers, books and sells</h3>
-            <p class="mt-2 text-gray-400 leading-relaxed">Inbound and outbound voice agents with natural conversation, live tool calling, call summaries and automatic CRM updates. Never miss a lead call again.</p>
-          </article>
-
-          <!-- Content + White label -->
-          <article class="reveal glass rounded-2xl p-7 md:col-span-3 transition">
-            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4zM4 15l5-5 4 4 3-3 4 4"/></svg>
-            </span>
-            <h3 class="mt-4 text-xl font-bold text-white">Content creation &amp; full white-label</h3>
-            <p class="mt-2 text-gray-400 leading-relaxed">Generate copy, images, video scripts and media inside the platform. Agencies get your domain, your logo, your pricing — SuperStack OS disappears behind your brand.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================================ -->
-    <!-- TOOLS MARQUEE: Infinite scrolling strip of 20+ integrated tools              -->
-    <!-- Features: CSS-only animation, pauses on hover                                 -->
-    <!-- Edit: Duplicate the list twice for a seamless loop                            -->
+    <!-- FLOW BUILDER SECTION: Interactive next-gen visual flow builder demo          -->
+    <!-- Features: Self-contained <superstack-flow-demo> web component (shadow DOM)    -->
+    <!-- Edit: Nodes/edges live inside the component script below                      -->
     <!-- ============================================================================ -->
     <section id="flow-builder" data-section="flow-builder" class="relative overflow-hidden py-20 sm:py-28 border-t border-white/5 bg-ink-900/60" aria-label="Next-generation visual flow builder">
       <div class="orb bg-brand-600 h-[400px] w-[400px] -left-48 top-20 opacity-20"></div>
@@ -1094,6 +977,387 @@
     })();
     </script>
 
+    <!-- ============================================================================ -->
+    <!-- STACK REPLACEMENT SCENE: Pinned, scroll-scrubbed GSAP marquee moment         -->
+    <!-- Behaviour: Scattered SaaS cards converge into the SuperStack OS core          -->
+    <!-- Edit: Change card labels below; positions are set with Tailwind left/top      -->
+    <!-- ============================================================================ -->
+    <section data-section="stack-replacement" class="stack-scene relative h-screen overflow-hidden bg-ink-900">
+      <div class="orb bg-brand-600 h-[500px] w-[500px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"></div>
+
+      <!-- Top headline (fades out) -->
+      <div class="stack-headline-a absolute top-24 sm:top-28 inset-x-0 px-4 sm:px-6 text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">The fragmented stack problem</p>
+        <h2 class="mt-3 text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">Twelve tabs. Twelve invoices.<br class="hidden sm:block"> Zero connection.</h2>
+      </div>
+
+      <!-- Scattered tool cards -->
+      <div class="stack-card left-[6%] top-[24%] sm:left-[10%] sm:top-[22%]" data-rot="-8"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">CRM</div></div>
+      <div class="stack-card right-[8%] top-[26%] sm:right-[12%] sm:top-[24%]" data-rot="7"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Email Marketing</div></div>
+      <div class="stack-card left-[4%] top-[46%] sm:left-[6%] sm:top-[48%]" data-rot="5"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Automation</div></div>
+      <div class="stack-card right-[5%] top-[48%] sm:right-[7%] sm:top-[50%]" data-rot="-6"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">E-commerce</div></div>
+      <div class="stack-card left-[12%] top-[68%] sm:left-[16%] sm:top-[70%]" data-rot="9"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Voice AI</div></div>
+      <div class="stack-card right-[14%] top-[70%] sm:right-[18%] sm:top-[72%]" data-rot="-4"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Loyalty</div></div>
+      <div class="stack-card left-[30%] top-[36%] sm:left-[26%] sm:top-[36%]" data-rot="3"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Content</div></div>
+      <div class="stack-card right-[30%] top-[38%] sm:right-[26%] sm:top-[36%]" data-rot="-3"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Payments</div></div>
+      <div class="stack-card left-[34%] top-[62%] sm:left-[32%] sm:top-[64%]" data-rot="-7"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">Scheduling</div></div>
+      <div class="stack-card right-[32%] top-[60%] sm:right-[30%] sm:top-[62%]" data-rot="6"><div class="glass rounded-xl px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold text-gray-200">AI Agents</div></div>
+
+      <!-- Core -->
+      <div class="absolute inset-0 flex items-center justify-center px-4">
+        <div class="stack-core rounded-3xl bg-ink-800 border border-brand-500/40 px-8 py-8 sm:px-14 sm:py-12 text-center">
+          <img src="https://paymegpt.com/objects/quick-uploads/2/d13163889f1ec1fb.png" alt="SuperStack OS" class="block mx-auto h-12 w-12">
+          <p class="mt-4 text-3xl sm:text-5xl font-black text-white tracking-tight">One OS.</p>
+          <p class="mt-2 text-sm sm:text-base text-gray-400">Everything connected. One login. One bill.</p>
+        </div>
+      </div>
+
+      <!-- Bottom caption (fades in) -->
+      <div class="stack-headline-b absolute bottom-16 sm:bottom-20 inset-x-0 px-4 sm:px-6 text-center">
+        <p class="text-base sm:text-lg text-gray-300 max-w-xl mx-auto">SuperStack OS replaces your fragmented SaaS stack with a single scalable platform your AI agents can actually operate.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- FEATURES SECTION: Bento grid of platform modules                             -->
+    <!-- Features: GSAP staggered reveal, hover border glow                            -->
+    <!-- Edit: Each card is a self-contained <article>                                 -->
+    <!-- ============================================================================ -->
+    <section id="features" data-section="features" class="features-section py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-brand-300">The platform</p>
+          <h2 class="reveal mt-3 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">Every tool your business needs. <span class="text-gradient">Already talking to each other.</span></h2>
+          <p class="reveal mt-4 text-gray-400 text-base sm:text-lg">No Zapier duct tape. No CSV exports. Every module shares the same contacts, events and data model — so an AI agent can read a call transcript, update the deal, send the invoice and issue a loyalty pass in one motion.</p>
+        </div>
+
+        <div class="features-grid mt-14 grid grid-cols-1 md:grid-cols-6 gap-5">
+          <!-- AI Agents (large) -->
+          <article class="reveal glass rounded-2xl p-7 md:col-span-4 transition">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
+                  <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                </span>
+                <h3 class="mt-4 text-xl font-bold text-white">AI Agents with real tools</h3>
+                <p class="mt-2 text-gray-400 leading-relaxed">Build agents that don't just chat — they act. Give them access to your CRM, calendar, Stripe, voice and content tools with custom functions and guardrails. Deploy on web, SMS, voice or inside ChatGPT, Claude and Grok through MCP.</p>
+              </div>
+            </div>
+            <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+              <div class="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-gray-300">Custom functions</div>
+              <div class="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-gray-300">Memory &amp; context</div>
+              <div class="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-gray-300">Multi-channel</div>
+              <div class="rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2 text-gray-300">Human handoff</div>
+            </div>
+          </article>
+
+          <!-- Automation -->
+          <article class="reveal glass rounded-2xl p-7 md:col-span-2 transition">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-volt-500/20 text-volt-300">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 3L4 14h7l-1 7 9-11h-7l1-7z"/></svg>
+            </span>
+            <h3 class="mt-4 text-xl font-bold text-white">No-code automation</h3>
+            <p class="mt-2 text-gray-400 leading-relaxed">Drag-and-drop customer journeys with triggers, branches, delays and AI decision steps. Automate onboarding, follow-ups, win-backs and renewals.</p>
+          </article>
+
+          <!-- CRM -->
+          <article class="reveal glass rounded-2xl p-7 md:col-span-2 transition">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"/></svg>
+            </span>
+            <h3 class="mt-4 text-xl font-bold text-white">CRM &amp; pipelines</h3>
+            <p class="mt-2 text-gray-400 leading-relaxed">Unified contacts, deals, tags, notes and timelines. Every email, call, purchase and agent action lands on one record.</p>
+          </article>
+
+          <!-- Marketing & Sales -->
+          <article class="reveal glass rounded-2xl p-7 md:col-span-2 transition">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-volt-500/20 text-volt-300">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11l18-6-6 18-2.5-7.5L3 11z"/></svg>
+            </span>
+            <h3 class="mt-4 text-xl font-bold text-white">Marketing &amp; sales</h3>
+            <p class="mt-2 text-gray-400 leading-relaxed">Email, SMS and social campaigns, landing pages, forms, booking, quotes and proposals — built in and tracked end to end.</p>
+          </article>
+
+          <!-- Commerce -->
+          <article class="reveal glass rounded-2xl p-7 md:col-span-2 transition">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 6l1.5 12a2 2 0 002 2h11a2 2 0 002-2L21 6M8 10v2a4 4 0 008 0v-2"/></svg>
+            </span>
+            <h3 class="mt-4 text-xl font-bold text-white">Stripe commerce &amp; wallet passes</h3>
+            <p class="mt-2 text-gray-400 leading-relaxed">Sell products, subscriptions and services with Stripe. Issue Apple and Google Wallet passes for loyalty, tickets and memberships.</p>
+          </article>
+
+          <!-- Voice -->
+          <article class="reveal glass rounded-2xl p-7 md:col-span-3 transition">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-volt-500/20 text-volt-300">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a3 3 0 013 3v6a3 3 0 11-6 0V6a3 3 0 013-3zM5 11a7 7 0 0014 0M12 18v3"/></svg>
+            </span>
+            <h3 class="mt-4 text-xl font-bold text-white">Voice AI that answers, books and sells</h3>
+            <p class="mt-2 text-gray-400 leading-relaxed">Inbound and outbound voice agents with natural conversation, live tool calling, call summaries and automatic CRM updates. Never miss a lead call again.</p>
+          </article>
+
+          <!-- Content + White label -->
+          <article class="reveal glass rounded-2xl p-7 md:col-span-3 transition">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/20 text-brand-300">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4zM4 15l5-5 4 4 3-3 4 4"/></svg>
+            </span>
+            <h3 class="mt-4 text-xl font-bold text-white">Content creation &amp; full white-label</h3>
+            <p class="mt-2 text-gray-400 leading-relaxed">Generate copy, images, video scripts and media inside the platform. Agencies get your domain, your logo, your pricing — SuperStack OS disappears behind your brand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================================ -->
+    <!-- INTEGRATIONS SECTION: Official brand logos, dual marquee + filterable grid   -->
+    <!-- Features: Inline SVG logo sprite, opposing CSS marquees, category filter,    -->
+    <!--           brand-color hover glow, GSAP reveal via .reveal                     -->
+    <!-- Edit: Add a <symbol> to the sprite + a tile/chip that references it          -->
+    <!-- ============================================================================ -->
+    <section id="integrations" data-section="integrations" class="integrations-section relative overflow-hidden py-20 sm:py-28 border-t border-white/5" aria-labelledby="integrations-title">
+    <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+      <symbol id="ssi-openai" viewBox="0 0 24 24"><g fill="#fff" fill-rule="evenodd"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"></path></g></symbol>
+      <symbol id="ssi-claude" viewBox="0 0 24 24"><path fill="#D97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></symbol>
+      <symbol id="ssi-grok" viewBox="0 0 24 24"><g fill="#fff" fill-rule="evenodd"><path d="M9.27 15.29l7.978-5.897c.391-.29.95-.177 1.137.272.98 2.369.542 5.215-1.41 7.169-1.951 1.954-4.667 2.382-7.149 1.406l-2.711 1.257c3.889 2.661 8.611 2.003 11.562-.953 2.341-2.344 3.066-5.539 2.388-8.42l.006.007c-.983-4.232.242-5.924 2.75-9.383.06-.082.12-.164.179-.248l-3.301 3.305v-.01L9.267 15.292M7.623 16.723c-2.792-2.67-2.31-6.801.071-9.184 1.761-1.763 4.647-2.483 7.166-1.425l2.705-1.25a7.808 7.808 0 00-1.829-1A8.975 8.975 0 005.984 5.83c-2.533 2.536-3.33 6.436-1.962 9.764 1.022 2.487-.653 4.246-2.34 6.022-.599.63-1.199 1.259-1.682 1.925l7.62-6.815"></path></g></symbol>
+      <symbol id="ssi-gemini" viewBox="0 0 24 24"><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="#3186FF"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#ssg0)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#ssg1)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#ssg2)"></path><defs><linearGradient gradientUnits="userSpaceOnUse" id="ssg0" x1="7" x2="11" y1="15.5" y2="12"><stop stop-color="#08B962"></stop><stop offset="1" stop-color="#08B962" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="ssg1" x1="8" x2="11.5" y1="5.5" y2="11"><stop stop-color="#F94543"></stop><stop offset="1" stop-color="#F94543" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="ssg2" x1="3.5" x2="17.5" y1="13.5" y2="12"><stop stop-color="#FABC12"></stop><stop offset=".46" stop-color="#FABC12" stop-opacity="0"></stop></linearGradient></defs></symbol>
+      <symbol id="ssi-gdocs" viewBox="0 0 24 24"><path fill="#4285F4" d="M14.727 6.727H14V0H4.91c-.905 0-1.637.732-1.637 1.636v20.728c0 .904.732 1.636 1.636 1.636h14.182c.904 0 1.636-.732 1.636-1.636V6.727h-6zm-.545 10.455H7.09v-1.364h7.09v1.364zm2.727-3.273H7.091v-1.364h9.818v1.364zm0-3.273H7.091V9.273h9.818v1.363zM14.727 6h6l-6-6v6z"/></symbol>
+      <symbol id="ssi-gsheets" viewBox="0 0 24 24"><path fill="#34A853" d="M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z"/></symbol>
+      <symbol id="ssi-facebook" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#fff"/><path fill="#0866FF" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol>
+      <symbol id="ssi-instagram" viewBox="0 0 24 24"><defs><radialGradient id="ssgIg" cx="0.3" cy="1.07" r="1.3"><stop offset="0" stop-color="#FFDD55"/><stop offset=".1" stop-color="#FFDD55"/><stop offset=".5" stop-color="#FF543E"/><stop offset="1" stop-color="#C837AB"/></radialGradient></defs><path fill="url(#ssgIg)" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+      <symbol id="ssi-whatsapp" viewBox="0 0 24 24"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+      <symbol id="ssi-telegram" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#fff"/><path fill="#26A5E4" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol>
+      <symbol id="ssi-discord" viewBox="0 0 24 24"><path fill="#5865F2" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+      <symbol id="ssi-twilio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.4" fill="none" stroke="#F22F46" stroke-width="3.2"/><g fill="#F22F46"><circle cx="9.04" cy="9.04" r="2.48"/><circle cx="14.96" cy="9.04" r="2.48"/><circle cx="9.04" cy="14.96" r="2.48"/><circle cx="14.96" cy="14.96" r="2.48"/></g></symbol>
+      <symbol id="ssi-elevenlabs" viewBox="0 0 24 24"><path fill="#fff" d="M4.6035 0v24h4.9317V0zm9.8613 0v24h4.9317V0z"/></symbol>
+      <symbol id="ssi-aws" viewBox="0 0 24 24"><path fill="#fff" d="M6.763 11.212c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 01-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 01-.287-.375 6.18 6.18 0 01-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.39-.384-.59-.894-.59-1.533 0-.678.24-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.4 2.4 0 01-.28.104.488.488 0 01-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 01.224-.167 4.577 4.577 0 011.005-.36 4.84 4.84 0 011.246-.151c.95 0 1.644.216 2.091.647.44.43.662 1.085.662 1.963v2.586h.016zm-3.24 1.214c.263 0 .534-.048.822-.144a1.78 1.78 0 00.758-.51 1.27 1.27 0 00.272-.512c.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 00-.735-.136 6.02 6.02 0 00-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 6.726a1.398 1.398 0 01-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 01.32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 01.311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 01-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 01-.303.08h-.687c-.15 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32L12.32 7.747l-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08l-.686.001zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 01-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.32.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 00.415-.758.777.777 0 00-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 01-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .36.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 01.24.2.43.43 0 01.071.263v.375c0 .168-.064.256-.184.256a.83.83 0 01-.303-.096 3.652 3.652 0 00-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.16.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926a2.157 2.157 0 01-.583.703c-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167z"></path><path d="M.378 15.475c3.384 1.963 7.56 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.44-.2.814.287.383.607-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351zm23.531-.2c.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151l.175-.439c.343-.88.802-2.198.52-2.555-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399z" fill="#F90"></path></symbol>
+      <symbol id="ssi-webhook" viewBox="0 0 24 24"><g fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="#C73A63" d="M4.876 13.61a4 4 0 1 0 6.124 3.39h6"/><path stroke="#9CA3AF" d="M15.066 20.502a4 4 0 1 0 1.934 -7.502c-.706 0 -1.424 .179 -2 .5l-3 -5.5"/><path stroke="#E5E7EB" d="M16 8a4 4 0 1 0 -8 0c0 1.506 .77 2.818 2 3.5l-3 5.5"/></g></symbol>
+      <symbol id="ssi-mcp" viewBox="0 0 24 24"><g fill="#fff" fill-rule="evenodd"><path d="M15.688 2.343a2.588 2.588 0 00-3.61 0l-9.626 9.44a.863.863 0 01-1.203 0 .823.823 0 010-1.18l9.626-9.44a4.313 4.313 0 016.016 0 4.116 4.116 0 011.204 3.54 4.3 4.3 0 013.609 1.18l.05.05a4.115 4.115 0 010 5.9l-8.706 8.537a.274.274 0 000 .393l1.788 1.754a.823.823 0 010 1.18.863.863 0 01-1.203 0l-1.788-1.753a1.92 1.92 0 010-2.754l8.706-8.538a2.47 2.47 0 000-3.54l-.05-.049a2.588 2.588 0 00-3.607-.003l-7.172 7.034-.002.002-.098.097a.863.863 0 01-1.204 0 .823.823 0 010-1.18l7.273-7.133a2.47 2.47 0 00-.003-3.537z"></path><path d="M14.485 4.703a.823.823 0 000-1.18.863.863 0 00-1.204 0l-7.119 6.982a4.115 4.115 0 000 5.9 4.314 4.314 0 006.016 0l7.12-6.982a.823.823 0 000-1.18.863.863 0 00-1.204 0l-7.119 6.982a2.588 2.588 0 01-3.61 0 2.47 2.47 0 010-3.54l7.12-6.982z"></path></g></symbol>
+    </svg>
+      <div class="orb bg-volt-500 h-[360px] w-[360px] -right-40 top-10 opacity-20"></div>
+      <div class="orb bg-brand-600 h-[360px] w-[360px] -left-40 bottom-0 opacity-20"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-volt-300">Integrations</p>
+          <h2 id="integrations-title" class="reveal mt-3 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">Plugs into the tools <span class="text-gradient">you already run on.</span></h2>
+          <p class="reveal mt-4 text-gray-400 text-base sm:text-lg">Bring your favorite models, channels and infrastructure. Every integration feeds the same contacts, flows and agents, so one event can ripple across your entire stack.</p>
+        </div>
+      </div>
+
+      <div class="relative mt-12 space-y-3">
+        <div class="int-marquee" aria-hidden="true">
+          <div class="int-marquee-track">
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-openai"/></svg>OpenAI</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-claude"/></svg>Claude</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-grok"/></svg>Grok</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-gemini"/></svg>Gemini</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-gdocs"/></svg>Google Docs</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-gsheets"/></svg>Google Sheets</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-facebook"/></svg>Facebook</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-instagram"/></svg>Instagram</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-openai"/></svg>OpenAI</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-claude"/></svg>Claude</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-grok"/></svg>Grok</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-gemini"/></svg>Gemini</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-gdocs"/></svg>Google Docs</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-gsheets"/></svg>Google Sheets</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-facebook"/></svg>Facebook</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-instagram"/></svg>Instagram</span>
+          </div>
+        </div>
+        <div class="int-marquee int-marquee-rev" aria-hidden="true">
+          <div class="int-marquee-track">
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-whatsapp"/></svg>WhatsApp</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-telegram"/></svg>Telegram</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-discord"/></svg>Discord</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-twilio"/></svg>Twilio</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-elevenlabs"/></svg>ElevenLabs</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-aws"/></svg>AWS</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-webhook"/></svg>Webhooks</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-mcp"/></svg>MCP</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-whatsapp"/></svg>WhatsApp</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-telegram"/></svg>Telegram</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-discord"/></svg>Discord</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-twilio"/></svg>Twilio</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-elevenlabs"/></svg>ElevenLabs</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-aws"/></svg>AWS</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-webhook"/></svg>Webhooks</span>
+            <span class="int-chip"><svg class="h-5 w-5" aria-hidden="true"><use href="#ssi-mcp"/></svg>MCP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mt-14 flex flex-wrap gap-2" role="toolbar" aria-label="Filter integrations by category">
+          <button type="button" class="int-tab is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="int-tab" data-filter="ai" aria-pressed="false">AI Models</button>
+          <button type="button" class="int-tab" data-filter="google" aria-pressed="false">Google</button>
+          <button type="button" class="int-tab" data-filter="social" aria-pressed="false">Social</button>
+          <button type="button" class="int-tab" data-filter="messaging" aria-pressed="false">Messaging</button>
+          <button type="button" class="int-tab" data-filter="voice" aria-pressed="false">Voice</button>
+          <button type="button" class="int-tab" data-filter="dev" aria-pressed="false">Developer</button>
+        </div>
+
+        <div id="intGrid" class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <article class="int-tile reveal" data-cat="ai" style="--c:#10A37F">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="OpenAI logo"><use href="#ssi-openai"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">OpenAI</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">AI Model</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">GPT models for agents and content</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="ai" style="--c:#D97757">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Claude logo"><use href="#ssi-claude"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Claude</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">AI Model</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Reasoning and long-context agents</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="ai" style="--c:#A3A3A3">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Grok logo"><use href="#ssi-grok"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Grok</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">AI Model</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Real-time models from xAI</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="ai" style="--c:#3186FF">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Gemini logo"><use href="#ssi-gemini"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Gemini</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">AI Model</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Multimodal models from Google</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="google" style="--c:#4285F4">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Google Docs logo"><use href="#ssi-gdocs"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Google Docs</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Google Workspace</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Create and append docs on autopilot</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="google" style="--c:#34A853">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Google Sheets logo"><use href="#ssi-gsheets"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Google Sheets</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Google Workspace</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Log leads, orders and results live</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="social" style="--c:#0866FF">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Facebook logo"><use href="#ssi-facebook"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Facebook</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Social</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Messenger, comments and posting</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="social" style="--c:#E1306C">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Instagram logo"><use href="#ssi-instagram"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Instagram</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Social</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">DMs, comment automations and posts</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="messaging" style="--c:#25D366">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="WhatsApp logo"><use href="#ssi-whatsapp"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">WhatsApp</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Messaging</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">AI agents on the world's inbox</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="messaging" style="--c:#26A5E4">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Telegram logo"><use href="#ssi-telegram"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Telegram</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Messaging</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Bots and broadcasts in one click</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="messaging" style="--c:#5865F2">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Discord logo"><use href="#ssi-discord"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Discord</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Messaging</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Community agents and alerts</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="messaging" style="--c:#F22F46">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Twilio logo"><use href="#ssi-twilio"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Twilio</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Messaging</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">SMS, voice calls and numbers</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="voice" style="--c:#E5E7EB">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="ElevenLabs logo"><use href="#ssi-elevenlabs"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">ElevenLabs</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Voice AI</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Lifelike voices for AI agents</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="dev" style="--c:#FF9900">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="AWS logo"><use href="#ssi-aws"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">AWS</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Developer</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Cloud storage and infrastructure</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="dev" style="--c:#C73A63">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="Webhooks logo"><use href="#ssi-webhook"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">Webhooks</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Developer</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Send and receive any event</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+          <article class="int-tile reveal" data-cat="dev" style="--c:#A78BFA">
+            <div class="int-logo"><svg class="h-7 w-7" role="img" aria-label="MCP logo"><use href="#ssi-mcp"/></svg></div>
+            <div class="min-w-0">
+              <h3 class="text-sm sm:text-base font-bold text-white">MCP</h3>
+              <p class="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">Developer</p>
+              <p class="int-blurb hidden sm:block mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">Connect any MCP client or server</p>
+            </div>
+            <span class="int-status" aria-hidden="true"></span>
+          </article>
+        </div>
+
+        <div class="reveal mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-2xl glass px-6 py-5">
+          <p class="text-sm sm:text-base text-gray-300"><span class="font-bold text-white">Don't see your tool?</span> Connect anything with Webhooks, Custom Functions or any MCP server.</p>
+          <a href="https://platform.superstackos.com/auth" class="shrink-0 inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-bold text-white hover:border-brand-400/60 hover:bg-white/10 transition">Start connecting <span class="ml-2" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================ -->
+    <!-- TOOLS MARQUEE: Infinite scrolling strip of 20+ integrated tools              -->
+    <!-- Features: CSS-only animation, pauses on hover                                 -->
+    <!-- Edit: Duplicate the list twice for a seamless loop                            -->
+    <!-- ============================================================================ -->
     <section data-section="tools" class="tools-section border-y border-white/5 bg-ink-900/60 py-8 overflow-hidden">
       <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 mb-6 px-4">20+ tools. One platform.</p>
       <div class="marquee" aria-hidden="true">
@@ -1229,15 +1493,15 @@
           <!-- Basic -->
           <article class="reveal glass rounded-2xl p-7 flex flex-col">
             <h3 class="text-lg font-bold text-white">Basic</h3>
-            <p class="mt-1 text-sm text-gray-400">For solo operators replacing their first stack.</p>
+            <p class="mt-1 text-sm text-gray-400">For small businesses and solo operators building their first stack.</p>
             <p class="mt-6 flex items-baseline gap-1"><span class="text-5xl font-black text-white">$49</span><span class="text-gray-500">/month</span></p>
             <ul class="mt-6 space-y-3 text-sm text-gray-300 flex-1">
-              <li class="flex gap-2"><span class="text-volt-400">✓</span> 3 AI agents + MCP access</li>
+              <li class="flex gap-2"><span class="text-volt-400">✓</span> 2 AI agents + MCP access</li>
               <li class="flex gap-2"><span class="text-volt-400">✓</span> CRM up to 5,000 contacts</li>
               <li class="flex gap-2"><span class="text-volt-400">✓</span> Email &amp; SMS campaigns</li>
               <li class="flex gap-2"><span class="text-volt-400">✓</span> No-code automations</li>
               <li class="flex gap-2"><span class="text-volt-400">✓</span> Stripe commerce</li>
-              <li class="flex gap-2"><span class="text-volt-400">✓</span> 500 voice minutes</li>
+
             </ul>
             <a href="https://platform.superstackos.com/auth" class="plan-btn mt-8 block w-full text-center rounded-xl border border-white/15 bg-white/5 px-5 py-3.5 font-semibold text-white hover:bg-white/10 transition">
               Get Basic
@@ -1249,16 +1513,14 @@
             <div class="rounded-2xl bg-ink-800 p-7 flex flex-col w-full">
               <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-brand-500 to-volt-400 px-3 py-1 text-xs font-bold text-ink">Most popular</span>
               <h3 class="text-lg font-bold text-white">PRO</h3>
-              <p class="mt-1 text-sm text-gray-400">For teams running the whole business on SuperStack OS.</p>
+              <p class="mt-1 text-sm text-gray-400">For solopreneurs, freelancers, agencies, and teams scaling on SuperStack OS.</p>
               <p class="mt-6 flex items-baseline gap-1"><span class="text-5xl font-black text-white">$79</span><span class="text-gray-500">/month</span></p>
               <ul class="mt-6 space-y-3 text-sm text-gray-300 flex-1">
                 <li class="flex gap-2"><span class="text-volt-400">✓</span> Unlimited AI agents + custom functions</li>
-                <li class="flex gap-2"><span class="text-volt-400">✓</span> CRM up to 50,000 contacts</li>
+                <li class="flex gap-2"><span class="text-volt-400">✓</span> CRM up to 500,000 contacts</li>
                 <li class="flex gap-2"><span class="text-volt-400">✓</span> Apple &amp; Google Wallet passes</li>
                 <li class="flex gap-2"><span class="text-volt-400">✓</span> Loyalty program &amp; e-commerce</li>
-                <li class="flex gap-2"><span class="text-volt-400">✓</span> Content Studio (copy, image, video)</li>
-                <li class="flex gap-2"><span class="text-volt-400">✓</span> 3,000 voice minutes</li>
-                <li class="flex gap-2"><span class="text-volt-400">✓</span> 5 team seats</li>
+                <li class="flex gap-2"><span class="text-volt-400">✓</span> AI Content Generator for copy, images, voice, music, video, and editing</li>
               </ul>
               <a href="https://platform.superstackos.com/auth" class="plan-btn mt-8 block w-full text-center rounded-xl bg-gradient-to-r from-brand-500 to-volt-400 px-5 py-3.5 font-bold text-ink hover:brightness-110 transition shadow-lg shadow-brand-600/30">
                 Get PRO
@@ -1304,33 +1566,33 @@
         <div class="testimonials-grid mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
           <figure class="reveal glass rounded-2xl p-7 flex flex-col">
             <div class="text-brand-300 text-sm" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="mt-4 text-gray-200 leading-relaxed flex-1">"I told Claude to re-engage our dormant leads. It searched the CRM, ran the voice agent on 340 contacts, booked 27 demos and pushed the loyalty passes — before my coffee got cold. We cancelled nine tools the following week."</blockquote>
+            <blockquote class="mt-4 text-gray-200 leading-relaxed flex-1">"FINALLY! My custom GPTs are making me money!!! This platform is the answer to all my custom GPT problems."</blockquote>
             <figcaption class="mt-6 flex items-center gap-3">
               <div>
-                <p class="text-sm font-semibold text-white">Maya Kessler</p>
-                <p class="text-xs text-gray-500">Founder, Northline Fitness Studios</p>
+                <p class="text-sm font-semibold text-white">Mere Hicks</p>
+                <p class="text-xs text-gray-500">Smart'R'Bots</p>
               </div>
             </figcaption>
           </figure>
 
           <figure class="reveal glass rounded-2xl p-7 flex flex-col">
             <div class="text-brand-300 text-sm" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="mt-4 text-gray-200 leading-relaxed flex-1">"We white-labeled SuperStack OS and launched our own AI business platform to 60 clients in under a month. Our own domain, our own pricing, their MCP server under our brand. Recurring revenue went up 4x."</blockquote>
+            <blockquote class="mt-4 text-gray-200 leading-relaxed flex-1">"I've spent a year building AI tools behind paywalls. This platform handles payments, subscriptions, and access control so I can focus on creating. No more chasing invoices or wasting hours on clunky systems."</blockquote>
             <figcaption class="mt-6 flex items-center gap-3">
               <div>
-                <p class="text-sm font-semibold text-white">Darius Okafor</p>
-                <p class="text-xs text-gray-500">CEO, Brightwave Digital Agency</p>
+                <p class="text-sm font-semibold text-white">Kim Gaskill</p>
+                <p class="text-xs text-gray-500">AI Educator & Entrepreneur</p>
               </div>
             </figcaption>
           </figure>
 
           <figure class="reveal glass rounded-2xl p-7 flex flex-col">
             <div class="text-brand-300 text-sm" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="mt-4 text-gray-200 leading-relaxed flex-1">"Voice AI answers every call, books into our calendar, takes the deposit through Stripe and drops an Apple Wallet pass in their phone. Our front desk used to be three people. Now it's one agent and a very happy manager."</blockquote>
+            <blockquote class="mt-4 text-gray-200 leading-relaxed flex-1">"This is such a powerful tool, yet I can't believe how easy it is to setup and get going. Speed is the name of the game in AI, and this platform delivers."</blockquote>
             <figcaption class="mt-6 flex items-center gap-3">
               <div>
-                <p class="text-sm font-semibold text-white">Lena Ruiz</p>
-                <p class="text-xs text-gray-500">Owner, Ruiz Dental Group</p>
+                <p class="text-sm font-semibold text-white">Charles Mack</p>
+                <p class="text-xs text-gray-500">Business Owner</p>
               </div>
             </figcaption>
           </figure>
@@ -1642,6 +1904,37 @@
       window.addEventListener('load', build);
     })();
 
+
+    // ===== INTEGRATIONS FILTER + CURSOR GLOW =====
+    // Function: initIntegrations()
+    // Purpose: Category tabs filter the logo grid; tiles track the cursor for a brand-color glow
+    (function initIntegrations() {
+      var grid = document.getElementById('intGrid');
+      if (!grid) return;
+      var tiles = Array.prototype.slice.call(grid.querySelectorAll('.int-tile'));
+      var tabs = document.querySelectorAll('.int-tab');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var f = tab.getAttribute('data-filter');
+          tabs.forEach(function (t) { var on = t === tab; t.classList.toggle('is-active', on); t.setAttribute('aria-pressed', String(on)); });
+          var shown = [];
+          tiles.forEach(function (el) {
+            var match = f === 'all' || el.getAttribute('data-cat') === f;
+            el.classList.toggle('is-hidden', !match);
+            if (match) shown.push(el);
+          });
+          gsap.fromTo(shown, { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power3.out', stagger: 0.04, overwrite: true });
+          ScrollTrigger.refresh();
+        });
+      });
+      tiles.forEach(function (el) {
+        el.addEventListener('pointermove', function (e) {
+          var r = el.getBoundingClientRect();
+          el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+      });
+    })();
 
     // ===== REFRESH SCROLLTRIGGER AFTER FONTS/LAYOUT SETTLE =====
     // Function: refreshTriggers()
