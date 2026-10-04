@@ -59,6 +59,10 @@
     .bar:nth-child(6) { animation-delay: 1.5s } .bar:nth-child(7) { animation-delay: 1.8s }
     @keyframes barpulse { 0%,100% { transform: scaleY(1) } 50% { transform: scaleY(.72) } }
 
+    /* ===== ALERT CARD ===== */
+    /* Notification drops into its existing dashboard position on scroll. */
+    .alert-card { will-change: transform, opacity; }
+
     /* ===== LIVE DOT ===== */
     /* Pulsing green indicator for "agents online" */
     .live-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
@@ -67,28 +71,21 @@
     /* ===== INTEGRATIONS ===== */
     /* Dual opposing logo marquees with edge fade */
     .int-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-    .int-marquee-track { display: flex; gap: 12px; width: max-content; padding: 2px 0; animation: marquee 46s linear infinite; }
-    .int-marquee-rev .int-marquee-track { animation-direction: reverse; animation-duration: 52s; }
+    .int-marquee-track { display: flex; gap: 12px; width: max-content; padding: 2px 0; animation: marquee 50s linear infinite; }
+    .int-marquee-rev .int-marquee-track { animation-direction: reverse; animation-duration: 56s; }
     .int-marquee:hover .int-marquee-track { animation-play-state: paused; }
     .int-chip { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); padding: 10px 18px 10px 14px; font-size: 14px; font-weight: 600; color: #d1d5db; }
-    /* Filter tabs */
-    .int-tab { border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); padding: 8px 16px; font-size: 13px; font-weight: 600; color: #9ca3af; transition: all .25s ease; }
-    .int-tab:hover { color: #fff; border-color: rgba(167,139,250,0.4); }
-    .int-tab.is-active { color: #07070d; border-color: transparent; background: linear-gradient(92deg, #a78bfa, #22d3ee); }
-    .int-tab:focus-visible { outline: 2px solid #22d3ee; outline-offset: 2px; }
-    /* Tiles: brand color comes from --c on each tile */
-    .int-tile { position: relative; display: flex; align-items: flex-start; gap: 14px; border-radius: 18px; padding: 18px; overflow: hidden;
+    /* Logo tiles: brand color comes from --c on each tile */
+    .int-tile { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; border-radius: 18px; padding: 22px 12px 18px; overflow: hidden;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08);
       transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease; }
     .int-tile::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .35s ease;
-      background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--c) 22%, transparent), transparent 70%); }
-    .int-tile:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--c) 45%, transparent); box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--c) 55%, transparent); }
+      background: radial-gradient(160px circle at 50% 0%, color-mix(in srgb, var(--c) 20%, transparent), transparent 70%); }
+    .int-tile:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--c) 45%, transparent); box-shadow: 0 18px 40px -20px color-mix(in srgb, var(--c) 55%, transparent); }
     .int-tile:hover::before { opacity: 1; }
-    .int-logo { position: relative; flex: none; display: grid; place-items: center; height: 52px; width: 52px; border-radius: 14px; background: #0b0b14; border: 1px solid rgba(255,255,255,0.08); transition: border-color .3s ease; }
+    .int-logo { position: relative; display: grid; place-items: center; height: 56px; width: 56px; border-radius: 16px; background: #0b0b14; border: 1px solid rgba(255,255,255,0.08); transition: border-color .3s ease; }
     .int-tile:hover .int-logo { border-color: color-mix(in srgb, var(--c) 50%, transparent); }
-    .int-status { position: absolute; top: 16px; right: 16px; height: 7px; width: 7px; border-radius: 9999px; background: #22c55e; box-shadow: 0 0 0 3px rgba(34,197,94,.15); }
-    .int-tile.is-hidden { display: none; }
-    @media (max-width: 639px) { .int-tile { flex-direction: column; gap: 10px; padding: 14px; } .int-logo { height: 44px; width: 44px; border-radius: 12px; } .int-status { top: 14px; right: 14px; } }
+    @media (max-width: 639px) { .int-tile { padding: 16px 6px 14px; border-radius: 14px; } .int-logo { height: 46px; width: 46px; border-radius: 13px; } .int-tile p:first-of-type { font-size: 12.5px; } }
     @media (prefers-reduced-motion: reduce) { .int-marquee-track { animation: none; } .int-tile { transition: none; } }
 
     #mobile-menu{display:none}
